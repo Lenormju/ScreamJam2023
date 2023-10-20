@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class mirror : MonoBehaviour
 {
+
+    public SpriteRenderer sp_fantome;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,18 +21,18 @@ public class mirror : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log(col.gameObject.tag);
         if (col.gameObject.CompareTag("Player")){
-            Debug.Log("Banane");
+            Debug.Log("Toc toc ! entrez !");
+            sp_fantome.enabled = true;
         }
         
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
-        Debug.Log(col.gameObject.tag);
         if (col.gameObject.CompareTag("Player")){
-            Debug.Log("Banane2");
+            Debug.Log("Dégage");
+            sp_fantome.enabled = false;
         }
         
     }
