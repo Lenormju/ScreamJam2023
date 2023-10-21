@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Eric_PlayerMovement.unity
     guid: 76a53daf338de9d4d95b3b1e2b689aeb
+  - enabled: 1
+    path: Assets/Scenes/WinningCondition.unity
+    guid: 6402e5564cf0ebf4c91d9b6af2054a1a
+  - enabled: 1
+    path: Assets/Scenes/Winning.unity
+    guid: e0b178b7564683349bf73292c8f2440e
   m_configObjects: {}
