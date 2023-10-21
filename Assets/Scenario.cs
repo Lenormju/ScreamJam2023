@@ -60,6 +60,27 @@ Lou "Lou" Bégé, C# and drawing expert
 Julien "Paul" Lenormand, screaming expert
 */
 
+/*
+LOSING:
+
+Gotcha!
+Your soul looks delicious, I'm going to feast on it...
+None of you managed to escape, your disappearances might serve as a warning to future reckless urban explorers...
+Or not.
+
+
+WINNING:
+
+As you reach the door, you can't go beyond it.
+But on the other side of the mirror, you see your reflection slipping into it.
+And thennnn you remember... you are not René.
+Long ago, you were reckless too, you ventured into this palace of mirrors, and reflections attacked you.
+Ever since, you haunt this place, in search of lost victims. 
+You always forget that you can no longer escape.
+But you still have a bit of Laetitia and Rubal's souls to syphon as a consolation prize. 
+And perhaps René will return one day...
+*/
+
 public class Scenario : MonoBehaviour
 {
     // Start is called before the first frame update
