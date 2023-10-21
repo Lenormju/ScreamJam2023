@@ -8,10 +8,6 @@ public class mirror : MonoBehaviour
     public GameObject player;
     private Collider2D[] Colliders;
     public float radius = 20f;
-    private List<GameObject> list_to_reflect;
-    public GameObject player;
-    private Collider2D[] Colliders;
-    public float radius = 20f;
 
     bool player_to_reflect = false;
     public GameObject copy_player_prefab;
