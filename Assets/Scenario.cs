@@ -48,6 +48,18 @@ Ouhha!
 Something is _wrong_ with their reflections... There's _something_ else here.
 */
 
+/*
+Credits
+
+Eric "Panzani" Papazian, Unity and ukulele expert
+Julien "Soupeur" Pinjon, jokes expert
+Gabriel "El magnifico" Gonzalez, lateness expert
+Nascimo "Nas" Verstraëte, raytracing expert
+Louis "Coffee" Evrard, mirrors expert
+Lou Bégé, C# and drawing expert
+Julien "Paul" Lenormand, screaming expert
+*/
+
 public class Scenario : MonoBehaviour
 {
     // Start is called before the first frame update
