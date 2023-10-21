@@ -7,4 +7,10 @@ public class gotoscene : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    public void Exit()
+    {
+        Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
+    }
 }
