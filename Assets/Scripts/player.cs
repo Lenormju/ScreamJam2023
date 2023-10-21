@@ -26,7 +26,7 @@ public class player : MonoBehaviour
         float verticalInput = Input.GetAxisRaw("Vertical"); 
         normalizedSpeed = verticalInput * _speed;
 
-        Debug.Log(horizontalInput + " " + verticalInput);
+        // Debug.Log(horizontalInput + " " + verticalInput);
         rb.MovePosition(gameObject.transform.position + gameObject.transform.up * normalizedSpeed * Time.fixedDeltaTime);
         rb.MoveRotation(rb.rotation - horizontalInput * _rotSpeed * Time.fixedDeltaTime);
     }
