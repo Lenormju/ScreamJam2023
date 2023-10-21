@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 701733}
   - component: {fileID: 701732}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CM vcam1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 54622320}
   - component: {fileID: 54622321}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,9 +365,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1718871207237340348, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1613190259}
     - target: {fileID: 7095169009496859027, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
       propertyPath: m_Name
       value: mirror shadow (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095169009496859027, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7095169009496859029, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
       propertyPath: m_RootOrder
@@ -433,7 +441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 475546672}
   - component: {fileID: 475546673}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,7 +716,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &602228195
+--- !u!43 &582629861
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -872,7 +880,7 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!43 &639593300
+--- !u!43 &602228195
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1212,7 +1220,7 @@ GameObject:
   - component: {fileID: 939040036}
   - component: {fileID: 939040035}
   - component: {fileID: 939040034}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1302,6 +1310,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1718871207237340348, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1613190259}
+    - target: {fileID: 3605853759530571284, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7095169009496859027, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
       propertyPath: m_Name
       value: mirror shadow (4)
@@ -1353,11 +1369,7 @@ PrefabInstance:
     - target: {fileID: 7095169009496859031, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 639593300}
-    - target: {fileID: 7095169009496859031, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
-      propertyPath: m_InstanceId
-      value: -43202
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 582629861}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
 --- !u!1001 &1316972766
@@ -1367,9 +1379,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1718871207237340348, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1613190259}
     - target: {fileID: 7095169009496859027, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
       propertyPath: m_Name
       value: mirror shadow (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095169009496859027, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7095169009496859029, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
       propertyPath: m_RootOrder
@@ -1596,9 +1616,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1718871207237340348, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1613190259}
     - target: {fileID: 7095169009496859027, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
       propertyPath: m_Name
       value: mirror shadow (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095169009496859027, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7095169009496859029, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
       propertyPath: m_RootOrder
@@ -1667,7 +1695,7 @@ GameObject:
   - component: {fileID: 1613190262}
   - component: {fileID: 1613190263}
   - component: {fileID: 1613190264}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1794,7 +1822,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!43 &1746469396
 Mesh:
@@ -1967,9 +1995,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1718871207237340348, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1613190259}
     - target: {fileID: 7095169009496859027, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
       propertyPath: m_Name
       value: mirror shadow (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095169009496859027, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7095169009496859029, guid: 9089a25ee0d8ff64793d91ced4890a77, type: 3}
       propertyPath: m_RootOrder
@@ -2035,7 +2071,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1975489700}
   - component: {fileID: 1975489701}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
