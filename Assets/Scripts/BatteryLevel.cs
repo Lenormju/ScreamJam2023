@@ -12,15 +12,12 @@ public class BatteryLevel : MonoBehaviour
     void Start()
     {
         _battery_level = GetComponent<Slider>();
-        _battery_level.maxValue = 100;
-        _battery_level.value = 100;
+        _battery_level.maxValue = GameManager.battery_level_start;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_battery_level.value > 0){
-            _battery_level.value -= battery_consumption * Time.deltaTime;
-        }
+        _battery_level.value = GameManager.battery_level;
     }
 }

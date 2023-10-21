@@ -8,6 +8,7 @@ public class player : MonoBehaviour
     [SerializeField] private float _rotSpeed = 10f;
 
     public LayerMask targetRaycast;
+    public GameObject smartphone_light;
 
     Rigidbody2D rb;
     float normalizedSpeed;

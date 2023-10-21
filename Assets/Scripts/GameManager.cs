@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
        
-	public static Slider _battery_level;
-    public static GameObject _player;
+    public static player player;
+
+	public static float battery_level;
+	public static float battery_level_start = 100;
+
+	public float battery_consumption = 10;
 
 	private static GameManager _instance;
 	public static GameManager Instance {
@@ -22,11 +26,24 @@ public class GameManager : MonoBehaviour {
 	    	}
 	}
 
-    private void Start()
+    void Start()
     {
-        GameObject battery_level_obj = GameObject.Find("BatteryLevel");
-		_battery_level = battery_level_obj.GetComponent<Slider>();
+		battery_level = 100;
 		
-        _player = GameObject.Find("player");
+        GameObject player_obj = GameObject.Find("player");
+		player = player_obj.GetComponent<player>();
     }
+
+	void Update()
+	{
+		if ( battery_level > 0)
+		{
+            battery_level -= battery_consumption * Time.deltaTime;
+        }
+		else
+		{
+			UnityEngine.Rendering.Universal.Light2D light =  player.smartphone_light.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
+			light.intensity = 0;
+		}
+	}
 }

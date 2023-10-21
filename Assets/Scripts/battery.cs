@@ -20,7 +20,7 @@ public class battery : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player")){
             Destroy(gameObject);
-            GameManager._battery_level.value +=10;
+            GameManager.battery_level +=10;
             // TODO : Delete reflection
         }
     }
