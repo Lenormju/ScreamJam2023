@@ -56,7 +56,7 @@ Julien "Soupeur" Pinjon, jokes expert
 Gabriel "El magnifico" Gonzalez, lateness expert
 Nascimo "Nas" Verstraëte, raytracing expert
 Louis "Coffee" Evrard, mirrors expert
-Lou Bégé, C# and drawing expert
+Lou "Lou" Bégé, C# and drawing expert
 Julien "Paul" Lenormand, screaming expert
 */
 
