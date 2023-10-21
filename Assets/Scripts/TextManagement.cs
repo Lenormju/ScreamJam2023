@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TextManagement : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class TextManagement : MonoBehaviour
     public float SecondsToWait;
     public float SecondsToDisplay;
     private Animator animator;
+    public string goToScene = "";
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +23,10 @@ public class TextManagement : MonoBehaviour
         animator.SetTrigger("AnimationText");
         yield return new WaitForSeconds(SecondsToDisplay);
         animator.SetTrigger("DisparitionText");
+        if (!string.IsNullOrEmpty(goToScene))
+        {
+            SceneManager.LoadScene(goToScene);
+        }
     }
+
 }
