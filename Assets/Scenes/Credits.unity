@@ -590,12 +590,12 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Team : W\u03C3-LoL\n\n\n- Eric \"Panzani\" Papazian, Unity and ukulele
     expert\r\n- Julien \"Soupeur\" Pinjon, jokes expert\r\n- Gabriel \"El magnifico\"
-    Gonzalez, lateness expert\r\n- Nascimo \"Nas\" Verstra\xEBte, raytracing expert\r\n-
-    Louis \"Coffee\" Evrard, mirrors expert\r\n- Lou \"Loulou\" B\xE9g\xE9, C# and
-    drawing expert\r\n- Julien \"Paul\" Lenormand, screaming expert\r"
+    Gonzalez, lateness expert\r\n- Nascimo \"Nas\" Verstraete, raytracing expert\r\n-
+    Louis \"Coffee\" Evrard, mirrors expert\r\n- Lou \"Loulou\" Bege, C# and drawing
+    expert\r\n- Julien \"Paul\" Lenormand, screaming expert\r"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 50d0f3a23c2bb834f8de0f520f757add, type: 2}
+  m_sharedMaterial: {fileID: -4260260323463983556, guid: 50d0f3a23c2bb834f8de0f520f757add, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -619,10 +619,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 36
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
