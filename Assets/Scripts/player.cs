@@ -12,6 +12,7 @@ public class player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.inertia = 100;
     }
 
     // Update is called once per frame
