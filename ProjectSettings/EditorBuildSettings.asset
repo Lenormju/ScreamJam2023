@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Settings.unity
     guid: dbfe2d76ab52c6c4386c364839267fe4
   - enabled: 1
-    path: Assets/Scenes/Eric_PlayerMovement.unity
+    path: Assets/Scenes/pinjoni.unity
     guid: 76a53daf338de9d4d95b3b1e2b689aeb
   - enabled: 1
     path: Assets/Scenes/WinningCondition.unity
