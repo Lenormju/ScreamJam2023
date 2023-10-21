@@ -13,6 +13,9 @@ public class mirror : MonoBehaviour
     public GameObject copy_player_prefab;
     private GameObject copy_player;
     // Start is called before the first frame update
+
+    public float timeSee = 0.5f;  // Taux de tir, un tir toutes les 0.25 secondes.
+    private float nextStopSee = 0f;
     void Start()
     {
         Vector3 center = gameObject.transform.position;
@@ -49,7 +52,7 @@ public class mirror : MonoBehaviour
             GameObject instantiated = Instantiate(col.gameObject, new_post, Quaternion.identity);
             float diff_angle = this.gameObject.transform.rotation.eulerAngles.z - col.gameObject.transform.rotation.eulerAngles.z;
             instantiated.transform.Rotate(0,0,(this.gameObject.transform.rotation.eulerAngles.z+diff_angle));
-            instantiated.layer = 3;
+            instantiated.layer = 16;
             instantiated.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,.5f);
         }
     }
@@ -68,7 +71,7 @@ public class mirror : MonoBehaviour
             copy_player.transform.position = new_post;
             float diff_angle = this.gameObject.transform.rotation.eulerAngles.z - player.gameObject.transform.rotation.eulerAngles.z;
             copy_player.transform.eulerAngles = new Vector3(0,0,(this.gameObject.transform.rotation.eulerAngles.z + diff_angle+180));
-            copy_player.layer = 3;
+            copy_player.layer = 16;
             
             copy_player.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,.5f);
         }   
@@ -77,6 +80,12 @@ public class mirror : MonoBehaviour
     void Update()
     {
         reflectPlayer();
+
+        if(Time.time > nextStopSee)
+        {
+            GetComponentInParent<SpriteRenderer>().enabled = false;
+            timeSee = Time.time + nextStopSee;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)

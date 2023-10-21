@@ -7,6 +7,8 @@ public class player : MonoBehaviour
     [SerializeField] private float _speed = 10f;
     [SerializeField] private float _rotSpeed = 10f;
 
+    public LayerMask targetRaycast;
+
     Rigidbody2D rb;
     float normalizedSpeed;
 
@@ -35,15 +37,13 @@ public class player : MonoBehaviour
         for(int i=0 ; i < nbRayCast ; i++)
         {
 
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, curVec, maxRayDistance, LayerMask.GetMask("Default"));
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, curVec, maxRayDistance, ~LayerMask.GetMask("DontReflect"));
             // Perform the raycast
             if (hit.collider != null)
             {
-                if(hit.collider.gameObject.CompareTag("Wall"))
-                {
-                  hit.collider.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                  Debug.Log(hit.collider.name);
 
-                }
+                  //hit.collider.gameObject.GetComponent<SpriteRenderer>().enabled = true;
                   hit.collider.gameObject.GetComponent<SpriteRenderer>().enabled = true;
                 // Do something with the hit information
             }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Wall : MonoBehaviour
 {
-    public float timeSee = 0.5f;  // Taux de tir, un tir toutes les 0.25 secondes.
+    public float timeSee = 0.5f;  
     private float nextStopSee = 0f;
 
     // Start is called before the first frame update
