@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class player : MonoBehaviour
 {
@@ -8,15 +9,50 @@ public class player : MonoBehaviour
     Rigidbody2D rb;
     Vector3 normalizedSpeedVector;
 
+    private LineRenderer lineRenderer;
+    public int nbRayCast = 120;
+    private float angleInRadians;
+    
     void Start()
     {
+        angleInRadians = (2 * Mathf.PI) / nbRayCast;
         rb = GetComponent<Rigidbody2D>();
+        lineRenderer = GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+        float curX = 1f;
+        float curY = 0f;
+        float maxRayDistance = 5f;
+
+        Vector3 curVec = new (curX, curY, 0f);
+        curVec = Vector3.Normalize(curVec);        
+
+        for(int i=0 ; i < nbRayCast ; i++)
+        {
+
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, curVec, maxRayDistance, LayerMask.GetMask("Default"));
+            // Perform the raycast
+            if (hit.collider != null)
+            {
+                if(hit.collider.gameObject.CompareTag("Wall"))
+                {
+                  hit.collider.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+
+                }
+                  hit.collider.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                // Do something with the hit information
+            }
+            
+            curX = curX * Mathf.Cos(angleInRadians) - curY * Mathf.Sin(angleInRadians);
+            curY = curX * Mathf.Sin(angleInRadians) + curY * Mathf.Cos(angleInRadians);
+
+            curVec = new (curX, curY, 0f);
+            curVec = Vector3.Normalize(curVec);
+        }
     }
 
     void FixedUpdate()
