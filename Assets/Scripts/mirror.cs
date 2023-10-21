@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class mirror : MonoBehaviour
 {
-    public List<GameObject> list_to_reflect;
+    private List<GameObject> list_to_reflect;
     public GameObject player;
-    public Collider2D[] Colliders;
+    private Collider2D[] Colliders;
     public float radius = 20f;
 
     bool player_to_reflect = false;
-    GameObject copy_player;
+    public GameObject copy_player_prefab;
+    private GameObject copy_player;
     // Start is called before the first frame update
     void Start()
     {
         Vector3 center = gameObject.transform.position;
         Colliders = Physics2D.OverlapCircleAll(center, radius, 1);
         gameObject.GetComponent<CircleCollider2D>().radius = radius;
-        copy_player = Instantiate(player,player.transform.position,Quaternion.identity);
-        copy_player.GetComponent<player>().enabled = false;
+        copy_player = Instantiate(copy_player_prefab, player.transform.position,Quaternion.identity);
+        //copy_player.GetComponent<player>().enabled = false;
         copy_player.SetActive(false);
         reflectWall();
 

@@ -43,7 +43,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -61,10 +61,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb963cfb30d0f445890bb0f4dd41fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  list_to_reflect: []
   player: {fileID: 0}
-  Colliders: []
   radius: 5
+  copy_player_prefab: {fileID: 6867158535524116784, guid: 531f366c7df1f634796b2679e3e3fc06, type: 3}
 --- !u!1 &7095169009496859027
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +203,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.25, z: 0}
   m_ShapePathHash: 764802325
   m_Mesh: {fileID: 0}
-  m_InstanceId: -4554
+  m_InstanceId: -1326
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.5, y: 0.25, z: 0}
