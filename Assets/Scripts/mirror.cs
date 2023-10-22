@@ -131,7 +131,7 @@ public class mirror : MonoBehaviour
         }
         
         
-        if(Time.time > nextStopSee)
+        if(!isHauntedMirror && Time.time > nextStopSee)
         {
             //GetComponentInParent<SpriteRenderer>().enabled = false;
             copy_player.GetComponent<SpriteRenderer>().enabled = false;
