@@ -154,7 +154,6 @@ public class mirror : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {  
-            Debug.Log("Les berets");
             copy_player.SetActive(false);
             player_to_reflect = false;
         }
