@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour {
 			UnityEngine.Rendering.Universal.Light2D light =  player.smartphone_light.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
 			light.intensity = 0;
 
-			SceneManager.LoadScene("Loosing");
+			SceneManager.LoadScene("Losing");
 		}
 	}
 }
