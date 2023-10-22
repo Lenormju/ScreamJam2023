@@ -11,15 +11,16 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.enabled = false;
         _navmeshAgent = GetComponent<NavMeshAgent>();
         _navmeshAgent.updateRotation = false;
         _navmeshAgent.updateUpAxis = false;
     }
 
+
     // Update is called once per frame
     void Update()
     {
-
 
     }
 

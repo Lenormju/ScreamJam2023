@@ -23,7 +23,7 @@ public class CatchMe : MonoBehaviour
     bool justeunefoisauchalet = false;
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") && justeunefoisauchalet == false)
+        if (other.gameObject.CompareTag("Player") && justeunefoisauchalet == false && GetComponentInParent<SpriteRenderer>().enabled)
         {
             justeunefoisauchalet = true;
             Debug.Log("Coucou! Tu veux voir ma ...");

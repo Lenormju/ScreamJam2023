@@ -120,8 +120,9 @@ public class mirror : MonoBehaviour
         }
 
         float distanceBetweenPlayerAndEnemy = Vector3.Distance(copy_player.transform.position, player.transform.position);
-        if (isHauntedMirror && distanceBetweenPlayerAndEnemy < enemyDetection)
+        if (isHauntedMirror && distanceBetweenPlayerAndEnemy < enemyDetection && copy_player.GetComponent<SpriteRenderer>().enabled)
         {
+
             NEmy.enabled = true;
             return;
         }
