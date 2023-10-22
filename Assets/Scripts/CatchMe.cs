@@ -5,6 +5,9 @@ using UnityEngine;
 public class CatchMe : MonoBehaviour
 {
     private Animator anim;
+
+    public GameObject explosion;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +38,6 @@ public class CatchMe : MonoBehaviour
 
     public void Explode()
     {
-        
+        explosion.SetActive(true);
     }
 }
