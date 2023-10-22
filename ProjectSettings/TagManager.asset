@@ -6,6 +6,7 @@ TagManager:
   tags:
   - battery_level
   - Wall
+  - battery
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Batteries
   - 
   - 
   - 

@@ -6,9 +6,14 @@ public class mirror : MonoBehaviour
 {
     private List<GameObject> list_to_reflect;
     private GameObject player;
-    private Collider2D[] Colliders;
+    public Collider2D[] Colliders;
+    public Collider2D[] Batteries;
+
+    
+    
     public float radius = 20f;
 
+    bool need_to_reflect = true;
     bool player_to_reflect = false;
     public GameObject copy_player_prefab;
     private GameObject copy_player;
@@ -25,8 +30,7 @@ public class mirror : MonoBehaviour
         copy_player = Instantiate(copy_player_prefab, player.transform.position,Quaternion.identity);
         //copy_player.GetComponent<player>().enabled = false;
         copy_player.SetActive(false);
-        reflectWall();
-
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(0.0f,1f,1f,0.0f);
     }
 
     void GetStaticObjects()
@@ -55,6 +59,13 @@ public class mirror : MonoBehaviour
             instantiated.transform.Rotate(0,0,(this.gameObject.transform.rotation.eulerAngles.z+diff_angle));
             instantiated.layer = 16;
             instantiated.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,.5f);
+            instantiated.GetComponent<SpriteRenderer>().flipY = true;
+
+            if(col.gameObject.CompareTag("battery"))
+            {
+                col.GetComponent<battery>().AddReflection(instantiated);
+            }
+
         }
     }
 
@@ -81,11 +92,15 @@ public class mirror : MonoBehaviour
     void Update()
     {
         reflectPlayer();
-
+        if(need_to_reflect)
+        {
+            need_to_reflect=false;
+            reflectWall();
+        }
         if(Time.time > nextStopSee)
         {
-            GetComponentInParent<SpriteRenderer>().enabled = false;
-            timeSee = Time.time + nextStopSee;
+            //GetComponentInParent<SpriteRenderer>().enabled = false;
+            //timeSee = Time.time + nextStopSee;
         }
     }
 
