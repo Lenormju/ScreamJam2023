@@ -27,11 +27,13 @@ public class battery : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player")){
+            
             foreach(GameObject reflect in reflections)
             {
                 Destroy(reflect);
             }
             Destroy(gameObject);
+            
             GameManager.battery_level +=10;
         }
     }

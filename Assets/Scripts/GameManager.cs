@@ -38,8 +38,6 @@ public class GameManager : MonoBehaviour {
     void Start()
     {
 		battery_level = 100;
-		
-
     }
 
 	void Update()
@@ -56,4 +54,5 @@ public class GameManager : MonoBehaviour {
 			SceneManager.LoadScene(loser_scene);
 		}
 	}
+	
 }
