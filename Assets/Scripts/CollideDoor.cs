@@ -7,6 +7,9 @@ public class CollideDoor : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D col)
     {
-        SceneManager.LoadScene("Winning");
+        if (col.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("Winning");
+        }
     }
 }

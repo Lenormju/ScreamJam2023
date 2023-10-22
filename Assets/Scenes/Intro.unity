@@ -352,7 +352,7 @@ MonoBehaviour:
   TextObj: {fileID: 138290187}
   SecondsToWait: 52.5
   SecondsToDisplay: 2
-  goToScene: Level
+  goToScene: Level 1
 --- !u!95 &138290190
 Animator:
   serializedVersion: 5
@@ -1319,7 +1319,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level
+          m_StringArgument: Level 1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1544813836

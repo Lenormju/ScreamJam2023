@@ -14,6 +14,7 @@ public class kill_enemy : MonoBehaviour
     {
        anim = GetComponent<Animator>();
        collider = GetComponent<Collider2D>();
+       collider.enabled = false ;
     }
 
     // Update is called once per frame
@@ -24,7 +25,6 @@ public class kill_enemy : MonoBehaviour
             anim.SetTrigger("flash");
             collider.enabled = true ;
         }
-
     }
 
     public void DisableHitbox(){

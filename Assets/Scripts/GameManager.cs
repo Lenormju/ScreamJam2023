@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour {
 
 	public float battery_consumption = 10;
 
+	private static Animator animato;
+
 	private static GameManager _instance;
 	public static GameManager Instance {
     		get {
@@ -34,12 +36,19 @@ public class GameManager : MonoBehaviour {
 	{
         GameObject player_obj = GameObject.Find("player");
         player = player_obj.GetComponent<player>();
+		animato = player_obj.GetComponent<Animator>();
     }
 
     void Start()
     {
 		battery_level = 100;
     }
+
+	public static void TakeDamage(float damage)
+	{
+		battery_level -= damage;
+		animato.SetTrigger("hited");
+	}
 
 	void Update()
 	{

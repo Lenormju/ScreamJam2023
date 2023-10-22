@@ -26,7 +26,7 @@ public class CatchMe : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && justeunefoisauchalet == false && GetComponentInParent<SpriteRenderer>().enabled)
         {
             justeunefoisauchalet = true;
-            GameManager.battery_level -= 50;
+            GameManager.TakeDamage(50);
             KillMe();
         }
     }
