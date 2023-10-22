@@ -26,12 +26,17 @@ public class GameManager : MonoBehaviour {
 	    	}
 	}
 
+	void Awake()
+	{
+        GameObject player_obj = GameObject.Find("player");
+        player = player_obj.GetComponent<player>();
+    }
+
     void Start()
     {
 		battery_level = 100;
 		
-        GameObject player_obj = GameObject.Find("player");
-		player = player_obj.GetComponent<player>();
+
     }
 
 	void Update()

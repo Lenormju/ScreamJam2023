@@ -5,7 +5,7 @@ using UnityEngine;
 public class mirror : MonoBehaviour
 {
     private List<GameObject> list_to_reflect;
-    public GameObject player;
+    private GameObject player;
     private Collider2D[] Colliders;
     public float radius = 20f;
 
@@ -18,6 +18,7 @@ public class mirror : MonoBehaviour
     private float nextStopSee = 0f;
     void Start()
     {
+        player = GameManager.player.gameObject;
         Vector3 center = gameObject.transform.position;
         Colliders = Physics2D.OverlapCircleAll(center, radius, 1);
         gameObject.GetComponent<CircleCollider2D>().radius = radius;
