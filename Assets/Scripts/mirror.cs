@@ -53,7 +53,7 @@ public class mirror : MonoBehaviour
             GameObject instantiated = Instantiate(col.gameObject, new_post, Quaternion.identity);
             float diff_angle = this.gameObject.transform.rotation.eulerAngles.z - col.gameObject.transform.rotation.eulerAngles.z;
             instantiated.transform.Rotate(0,0,(this.gameObject.transform.rotation.eulerAngles.z+diff_angle));
-            instantiated.layer = 16;
+            instantiated.layer = 15;
             instantiated.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,.5f);
         }
     }
@@ -72,7 +72,8 @@ public class mirror : MonoBehaviour
             copy_player.transform.position = new_post;
             float diff_angle = this.gameObject.transform.rotation.eulerAngles.z - player.gameObject.transform.rotation.eulerAngles.z;
             copy_player.transform.eulerAngles = new Vector3(0,0,(this.gameObject.transform.rotation.eulerAngles.z + diff_angle+180));
-            copy_player.layer = 16;
+            copy_player.layer = 15;
+            //copy_player.GetComponent<SpriteRenderer>().enabled = false;
             
             copy_player.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,.5f);
         }   
@@ -84,8 +85,9 @@ public class mirror : MonoBehaviour
 
         if(Time.time > nextStopSee)
         {
-            GetComponentInParent<SpriteRenderer>().enabled = false;
-            timeSee = Time.time + nextStopSee;
+            //GetComponentInParent<SpriteRenderer>().enabled = false;
+            copy_player.GetComponent<SpriteRenderer>().enabled = false;
+            nextStopSee= Time.time + timeSee;
         }
     }
 

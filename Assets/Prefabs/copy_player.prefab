@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6103372246252469024}
   - component: {fileID: 2385605107317579140}
-  m_Layer: 3
-  m_Name: Light 2D
+  m_Layer: 18
+  m_Name: Light2DCone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2387375877386481102}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
@@ -92,7 +92,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6446087596531868053}
   - component: {fileID: 1246703757542111238}
-  m_Layer: 3
+  - component: {fileID: 6099933784378895404}
+  m_Layer: 15
   m_Name: copy_player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -123,7 +124,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6867158535524116784}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -168,6 +169,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &6099933784378895404
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6867158535524116784}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.39
 --- !u!1 &7798888701780362088
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,8 +195,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4860538134214301177}
   - component: {fileID: 9089477877430379799}
-  m_Layer: 3
-  m_Name: Light 2D (1)
+  m_Layer: 18
+  m_Name: Light2DCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

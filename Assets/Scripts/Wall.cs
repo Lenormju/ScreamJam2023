@@ -5,7 +5,7 @@ using UnityEngine;
 public class Wall : MonoBehaviour
 {
     public float timeSee = 0.5f;  
-    private float nextStopSee = 0f;
+    public float nextStopSee = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +19,7 @@ public class Wall : MonoBehaviour
         if(Time.time > nextStopSee)
         {
             GetComponent<SpriteRenderer>().enabled = false;
-            timeSee = Time.time + nextStopSee;
+            nextStopSee = Time.time + timeSee;
         }
-    }
-
-    void seen()
-    {
-
-
     }
 }

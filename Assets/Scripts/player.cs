@@ -39,15 +39,23 @@ public class player : MonoBehaviour
         for(int i=0 ; i < nbRayCast ; i++)
         {
 
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, curVec, maxRayDistance, ~LayerMask.GetMask("DontReflect"));
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, curVec, maxRayDistance, ~LayerMask.GetMask("DontReflect", "NeverReflect"));
             // Perform the raycast
             if (hit.collider != null)
             {
-                  //Debug.Log(hit.collider.name);
-
-                  //hit.collider.gameObject.GetComponent<SpriteRenderer>().enabled = true;
-                  hit.collider.gameObject.GetComponent<SpriteRenderer>().enabled = true;
-                // Do something with the hit information
+                  if(hit.collider.gameObject.layer.Equals(17))
+                  {
+                    float resteRayDistance = maxRayDistance - hit.distance;
+                    RaycastHit2D reHit = Physics2D.Raycast(hit.point, curVec, resteRayDistance, ~LayerMask.GetMask("Mirror", "NeverReflect"));
+                    if (reHit.collider != null)
+                    {
+                        reHit.collider.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                    }
+                  }
+                  else
+                  {
+                    hit.collider.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                  }
             }
             
             curX = curX * Mathf.Cos(angleInRadians) - curY * Mathf.Sin(angleInRadians);
