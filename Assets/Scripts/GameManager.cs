@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
        
     public static player player;
 
+	public static string previous_scene = null;
 	public static float battery_level;
 	public static float battery_level_start = 100;
 
