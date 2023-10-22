@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7095169009496859028}
   - component: {fileID: 7095169009496859030}
   - component: {fileID: 7095169009496859031}
+  - component: {fileID: 848846846}
+  - component: {fileID: 848846845}
   m_Layer: 3
   m_Name: mirror shadow
   m_TagString: Untagged
@@ -138,7 +140,40 @@ MonoBehaviour:
   - {x: 0.5, y: -0.25, z: 0}
   m_ShapePathHash: 764802325
   m_Mesh: {fileID: 0}
-  m_InstanceId: 58976
+  m_InstanceId: -7256
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.5, y: 0.25, z: 0}
+--- !u!58 &848846846
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095169009496859027}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!114 &848846845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095169009496859027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb963cfb30d0f445890bb0f4dd41fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Colliders: []
+  Batteries: []
+  radius: 5
+  copy_player_prefab: {fileID: 6867158535524116784, guid: 531f366c7df1f634796b2679e3e3fc06, type: 3}
+  timeSee: 0.5
