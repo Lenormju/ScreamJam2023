@@ -43,7 +43,7 @@ public class mirror : MonoBehaviour
         }
         //copy_player.GetComponent<player>().enabled = false;
         copy_player.SetActive(false);
-        gameObject.GetComponent<SpriteRenderer>().color = new Color(0.0f,1f,1f,0.0f);
+        // gameObject.GetComponent<SpriteRenderer>().color = new Color(0.0f,1f,1f,1.0f);
     }
 
     void GetStaticObjects()
