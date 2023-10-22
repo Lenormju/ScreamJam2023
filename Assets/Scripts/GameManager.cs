@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
+
+	public string loser_scene ="Losing";
        
     public static player player;
 
@@ -51,7 +53,7 @@ public class GameManager : MonoBehaviour {
 			UnityEngine.Rendering.Universal.Light2D light =  player.smartphone_light.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
 			light.intensity = 0;
 
-			SceneManager.LoadScene("Losing");
+			SceneManager.LoadScene(loser_scene);
 		}
 	}
 }
