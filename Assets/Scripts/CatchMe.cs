@@ -32,4 +32,9 @@ public class CatchMe : MonoBehaviour
     public void DestroyEnemy(){
         Destroy(gameObject);
     }
+
+    public void Explode()
+    {
+        
+    }
 }

@@ -9,7 +9,10 @@ public class mirror : MonoBehaviour
     public Collider2D[] Colliders;
     public Collider2D[] Batteries;
 
-    
+    public bool isHauntedMirror = false;
+    public GameObject realEnemyPrefab;
+
+    public float enemyDetection = 1;
     
     public float radius = 20f;
 
@@ -21,13 +24,23 @@ public class mirror : MonoBehaviour
 
     public float timeSee = 0.5f;  // Taux de tir, un tir toutes les 0.25 secondes.
     private float nextStopSee = 0f;
+    private EnemyAI NEmy;
     void Start()
     {
         player = GameManager.player.gameObject;
         Vector3 center = gameObject.transform.position;
         Colliders = Physics2D.OverlapCircleAll(center, radius, 1);
         gameObject.GetComponent<CircleCollider2D>().radius = radius;
-        copy_player = Instantiate(copy_player_prefab, player.transform.position,Quaternion.identity);
+        if (isHauntedMirror)
+        {
+            copy_player = Instantiate(realEnemyPrefab, player.transform.position,Quaternion.identity);
+            NEmy = copy_player.GetComponent<EnemyAI>();
+            NEmy.enabled = false;
+        }
+        else
+        {
+            copy_player = Instantiate(copy_player_prefab, player.transform.position,Quaternion.identity);
+        }
         //copy_player.GetComponent<player>().enabled = false;
         copy_player.SetActive(false);
         gameObject.GetComponent<SpriteRenderer>().color = new Color(0.0f,1f,1f,0.0f);
@@ -88,28 +101,41 @@ public class mirror : MonoBehaviour
             copy_player.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,.5f);
         }   
     }
+
     // Update is called once per frame
     void Update()
     {
-        reflectPlayer();
         if(need_to_reflect)
         {
             need_to_reflect=false;
             reflectWall();
         }
-        if(Time.time > nextStopSee)
+
+        if (copy_player == null)
         {
-            //GetComponentInParent<SpriteRenderer>().enabled = false;
-            //timeSee = Time.time + nextStopSee;
+            return ;
         }
+
+        float distanceBetweenPlayerAndEnemy = Vector3.Distance(copy_player.transform.position, player.transform.position);
+        if (isHauntedMirror && distanceBetweenPlayerAndEnemy < enemyDetection)
+        {
+            NEmy.enabled = true;
+            return;
+        }
+        else
+        {
+            reflectPlayer();
+        }
+        
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            copy_player.SetActive(true);
             player_to_reflect = true;
+            copy_player.SetActive(true);
+            reflectPlayer();
         }
     }
 
@@ -117,6 +143,7 @@ public class mirror : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {  
+            Debug.Log("Les berets");
             copy_player.SetActive(false);
             player_to_reflect = false;
         }
