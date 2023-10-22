@@ -43,7 +43,7 @@ public class player : MonoBehaviour
             // Perform the raycast
             if (hit.collider != null)
             {
-                  Debug.Log(hit.collider.name);
+                  //Debug.Log(hit.collider.name);
 
                   //hit.collider.gameObject.GetComponent<SpriteRenderer>().enabled = true;
                   hit.collider.gameObject.GetComponent<SpriteRenderer>().enabled = true;
