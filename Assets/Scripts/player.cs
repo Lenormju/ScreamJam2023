@@ -70,6 +70,7 @@ public class player : MonoBehaviour
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical"); 
+
         normalizedSpeed = verticalInput * _speed;
 
         // Debug.Log(horizontalInput + " " + verticalInput);

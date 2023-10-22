@@ -26,10 +26,14 @@ public class CatchMe : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && justeunefoisauchalet == false)
         {
             justeunefoisauchalet = true;
-            Debug.Log("Coucou! Tu veux voir ma ...");
             GameManager.battery_level -= 50;
-            anim.SetTrigger("ChtaiChopay");
+            KillMe();
         }
+    }
+
+    public void KillMe()
+    {
+        anim.SetTrigger("ChtaiChopay");
     }
 
     public void DestroyEnemy(){
