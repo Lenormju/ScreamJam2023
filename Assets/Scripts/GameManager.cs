@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
+
+	public string loser_scene ="Losing";
        
     public static player player;
 
@@ -35,8 +38,6 @@ public class GameManager : MonoBehaviour {
     void Start()
     {
 		battery_level = 100;
-		
-
     }
 
 	void Update()
@@ -49,6 +50,9 @@ public class GameManager : MonoBehaviour {
 		{
 			UnityEngine.Rendering.Universal.Light2D light =  player.smartphone_light.GetComponent<UnityEngine.Rendering.Universal.Light2D>();
 			light.intensity = 0;
+
+			SceneManager.LoadScene(loser_scene);
 		}
 	}
+	
 }

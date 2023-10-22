@@ -6,9 +6,17 @@ public class mirror : MonoBehaviour
 {
     private List<GameObject> list_to_reflect;
     private GameObject player;
-    private Collider2D[] Colliders;
+    public Collider2D[] Colliders;
+    public Collider2D[] Batteries;
+
+    public bool isHauntedMirror = false;
+    public GameObject realEnemyPrefab;
+
+    public float enemyDetection = 1;
+    
     public float radius = 20f;
 
+    bool need_to_reflect = true;
     bool player_to_reflect = false;
     public GameObject copy_player_prefab;
     private GameObject copy_player;
@@ -16,17 +24,26 @@ public class mirror : MonoBehaviour
 
     public float timeSee = 0.5f;  // Taux de tir, un tir toutes les 0.25 secondes.
     private float nextStopSee = 0f;
+    private EnemyAI NEmy;
     void Start()
     {
         player = GameManager.player.gameObject;
         Vector3 center = gameObject.transform.position;
         Colliders = Physics2D.OverlapCircleAll(center, radius, 1);
         gameObject.GetComponent<CircleCollider2D>().radius = radius;
-        copy_player = Instantiate(copy_player_prefab, player.transform.position,Quaternion.identity);
+        if (isHauntedMirror)
+        {
+            copy_player = Instantiate(realEnemyPrefab, player.transform.position,Quaternion.identity);
+            NEmy = copy_player.GetComponent<EnemyAI>();
+            NEmy.enabled = false;
+        }
+        else
+        {
+            copy_player = Instantiate(copy_player_prefab, player.transform.position,Quaternion.identity);
+        }
         //copy_player.GetComponent<player>().enabled = false;
         copy_player.SetActive(false);
-        reflectWall();
-
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(0.0f,1f,1f,0.0f);
     }
 
     void GetStaticObjects()
@@ -55,6 +72,13 @@ public class mirror : MonoBehaviour
             instantiated.transform.Rotate(0,0,(this.gameObject.transform.rotation.eulerAngles.z+diff_angle));
             instantiated.layer = 15;
             instantiated.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,.5f);
+            instantiated.GetComponent<SpriteRenderer>().flipY = true;
+
+            if(col.gameObject.CompareTag("battery"))
+            {
+                col.GetComponent<battery>().AddReflection(instantiated);
+            }
+
         }
     }
 
@@ -78,11 +102,33 @@ public class mirror : MonoBehaviour
             copy_player.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,.5f);
         }   
     }
+
     // Update is called once per frame
     void Update()
     {
-        reflectPlayer();
+        if(need_to_reflect)
+        {
+            need_to_reflect=false;
+            reflectWall();
+        }
 
+        if (copy_player == null)
+        {
+            return;
+        }
+
+        float distanceBetweenPlayerAndEnemy = Vector3.Distance(copy_player.transform.position, player.transform.position);
+        if (isHauntedMirror && distanceBetweenPlayerAndEnemy < enemyDetection)
+        {
+            NEmy.enabled = true;
+            return;
+        }
+        else
+        {
+            reflectPlayer();
+        }
+        
+        
         if(Time.time > nextStopSee)
         {
             //GetComponentInParent<SpriteRenderer>().enabled = false;
@@ -95,8 +141,9 @@ public class mirror : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            copy_player.SetActive(true);
             player_to_reflect = true;
+            copy_player.SetActive(true);
+            reflectPlayer();
         }
     }
 
@@ -104,6 +151,7 @@ public class mirror : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {  
+            Debug.Log("Les berets");
             copy_player.SetActive(false);
             player_to_reflect = false;
         }

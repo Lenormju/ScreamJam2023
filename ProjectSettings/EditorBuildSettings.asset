@@ -19,13 +19,16 @@ EditorBuildSettings:
     guid: dbfe2d76ab52c6c4386c364839267fe4
   - enabled: 1
     path: Assets/Scenes/Eric_PlayerMovement.unity
-    guid: 76a53daf338de9d4d95b3b1e2b689aeb
+    guid: a5047b1cbdfef6249a24baeb1cf0ead6
   - enabled: 1
     path: Assets/Scenes/WinningCondition.unity
     guid: 6402e5564cf0ebf4c91d9b6af2054a1a
   - enabled: 1
     path: Assets/Scenes/Winning.unity
     guid: e0b178b7564683349bf73292c8f2440e
+  - enabled: 1
+    path: Assets/Scenes/DieAndRetry.unity
+    guid: 21859ec39fef61c4094d872dde434047
   - enabled: 1
     path: Assets/Scenes/Losing.unity
     guid: 94b6d6b880dfbd14ea727e2b7532a002
