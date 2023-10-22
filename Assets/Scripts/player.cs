@@ -49,7 +49,7 @@ public class player : MonoBehaviour
                     RaycastHit2D reHit = Physics2D.Raycast(hit.point, curVec, resteRayDistance, ~LayerMask.GetMask("Mirror", "NeverReflect"));
                     if (reHit.collider != null)
                     {
-                        reHit.collider.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+                        reHit.collider.gameObject.GetComponentInParent<SpriteRenderer>().enabled = true;
                     }
                   }
                   else
