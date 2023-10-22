@@ -71,7 +71,8 @@ public class mirror : MonoBehaviour
             float diff_angle = this.gameObject.transform.rotation.eulerAngles.z - col.gameObject.transform.rotation.eulerAngles.z;
             instantiated.transform.Rotate(0,0,(this.gameObject.transform.rotation.eulerAngles.z+diff_angle));
             instantiated.layer = 15;
-            instantiated.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,.5f);
+            Color getColor = col.gameObject.GetComponent<SpriteRenderer>().color;
+            instantiated.GetComponent<SpriteRenderer>().color = new Color(getColor.r, getColor.g, getColor.b, 0.5f);
             instantiated.GetComponent<SpriteRenderer>().flipY = true;
 
             if(col.gameObject.CompareTag("battery"))
@@ -99,7 +100,8 @@ public class mirror : MonoBehaviour
             copy_player.layer = 15;
             //copy_player.GetComponent<SpriteRenderer>().enabled = false;
             
-            copy_player.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,.5f);
+            Color getColor = player.GetComponent<SpriteRenderer>().color;
+            copy_player.GetComponent<SpriteRenderer>().color = new Color(getColor.r, getColor.g, getColor.b, 0.5f);
         }   
     }
 
